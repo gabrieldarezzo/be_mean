@@ -16,7 +16,7 @@ http://gabrieldarezzo.github.io/be_mean/aula4/
 
 http://gabrieldarezzo.github.io/be_mean/aula5/  
 
-http://gabrieldarezzo.github.io/be_mean/aula6/  
+http://gabrieldarezzo.github.io/be_mean/aula6/  (MaterializeCss Ativo)
 
 http://gabrieldarezzo.github.io/be_mean/aula7/  
 
