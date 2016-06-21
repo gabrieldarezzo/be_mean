@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /be_mean/api/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /be_mean/api/index.php [L]
+
