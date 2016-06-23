@@ -1,5 +1,7 @@
+/*
 CREATE DATABASE bemean;
 USE bemean;
+*/
 
 CREATE TABLE users(
 	 id int(8) primary key auto_increment
