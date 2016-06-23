@@ -1,4 +1,8 @@
 <?php
+
+//ADD GitHub CORS, This avoid: No 'Access-Control-Allow-Origin'
+header('Access-Control-Allow-Origin: http://gabrieldarezzo.github.io');  
+
 require 'vendor/autoload.php';
  
 header('Content-Type: application/json; charset=utf-8');
