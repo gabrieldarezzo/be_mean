@@ -29,6 +29,8 @@ angular.module('User', [])
 
 
 
+
+
 function UserService($http){
 	
 	//Checa se esta em Local ou no GitHub
@@ -39,10 +41,14 @@ function UserService($http){
 		var base_url = 'http://inwork.com.br/clientes/be_mean/api/user/';
 	}
 	
+	var base_url = 'http://bemean.inwork.com.br/user/';
+	
+	
+	
 	this.add = function(user){
 		const method 	= 'POST';
 		const request 	= {
-			 url	: url
+			 url	: base_url
 			,method : method
 			,data	: user
 		};
@@ -79,7 +85,6 @@ function UserService($http){
 			,method : method
 			,data	: user
 		};
-		
 		return $http(request);
 	};
 	
@@ -226,6 +231,7 @@ function UserDetailsController($routeParams, UserService){
 		
 		UserService.update(user)
 		.success(function(data){
+			console.log(data);
 			
 		})
 		.error(function(err){
