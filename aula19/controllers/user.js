@@ -38,11 +38,12 @@ function UserService($http){
 		var base_url = 'http://localhost/be_mean/api/user/';
 	} else {
 		//REST InWork
-		var base_url = 'http://inwork.com.br/clientes/be_mean/api/user/';
+		var base_url = 'http://bemean.inwork.com.br/user/';
 	}
 	
-	var base_url = 'http://bemean.inwork.com.br/user/';
 	
+	//Força 'produção' mesmo na LOCAL (tentando resolver CORS)
+	var base_url = 'http://bemean.inwork.com.br/user/';
 	
 	
 	this.add = function(user){
@@ -78,6 +79,8 @@ function UserService($http){
 	};
 	
 	this.update = function(user){
+		
+		
 		const url 		= base_url
 		const method 	= 'PUT';
 		const request 	= {
