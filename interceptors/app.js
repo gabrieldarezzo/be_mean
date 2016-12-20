@@ -54,6 +54,10 @@ function HomeController($http){
 	
 	function testaToken(){
 		console.log('Setando token no localStorage, "token"->"TOKEN_TEST"');
+		//Utilizar na resposta do php.
+		//Exemplo: bin2hex(openssl_random_pseudo_bytes(16))
+		
+		//Mais Informações: http://www.webstreaming.com.ar/articles/php-slim-token-authentication/
 		localStorage.setItem('token', 'TOKEN_TEST');
 		console.log('Setando token no localStorage, "token"->"TOKEN_TEST"');
 		$http.get('app.js');
