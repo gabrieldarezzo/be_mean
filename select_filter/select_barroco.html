@@ -1,0 +1,23 @@
+SacService.getSacFilas(cliSac).then(function successCallback(response) {						
+		//console.log(response.data.dados);
+		$scope.sacFilas = response.data.dados;
+	}, function errorCallback(response) {			
+	
+	})
+;
+
+				
+HTTP:
+{
+	"success":true
+	,"dados":{
+		"1":"Coordena\u00e7\u00e3o","2":"Secretaria","3":"Dire\u00e7\u00e3o","4":"Tesouraria","5":"Portaria","6":"Enfermaria","7":"Nutricionista"
+	}
+}
+
+
+
+
+<select id="cod_fila" class="inschool-select" style="width: 100%;" ng-model="form.cod_fila" ng-options="key as value for (key , value) in sacFilas track by key">
+	<option value="" disabled selected>Escolha a Área</option>		    
+</select>		
