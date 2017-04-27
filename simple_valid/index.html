@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt_br" data-ng-app="myApp">
+<head>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<title>Be MEAN</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="materialize/css/materialize.min.css" />	
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	
+	
+	<style type="text/css">
+		.error-field{
+			display: block;
+			color: #F44336;
+			opacity: 1;
+		}	
+	</style>
+	
+	
+</head>
+<body>
+	<div class="container" ng-controller="AppController as ctrl" >
+		<form ng-submit="form.$valid && ctrl.submitMyForm()" name="form" novalidate>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="uname" type="text" ng-model="ctrl.user.username" name="uname" required ng-minlength="3" 
+					data-ng-class="{
+						 'invalid': form.uname.$invalid && (!form.uname.$pristine || submitted)
+						,'valid': form.uname.$valid && (!form.uname.$pristine || submitted)
+					}"/>
+					<label for="uname" >Nome</label>
+					<span class="error-field" ng-show="submitted == true && form.uname.$error.required">This is a required field</span>										
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="numero" type="tel" ng-model="ctrl.user.numero" name="numero" required
+					data-ng-class="{
+						 'invalid': form.numero.$invalid && (!form.numero.$pristine || submitted)
+						,'valid': form.numero.$valid && (!form.numero.$pristine || submitted)
+					}"/>
+					<label for="numero" >Nome</label>
+					<span class="error-field" ng-show="submitted == true && form.numero.$error.required">This is a required field</span>										
+				</div>
+			</div>
+			
+			<h5>Limpin = {{form.$pristine}}</h5>
+			<h5>Campo Nome limpo = {{form.uname.$dirty}}</h5>
+			<h5>Btn Click  = {{submitted == true}}</h5>
+			<hr />
+
+			<button type="submit" name="action" class="btn btn-large blue waves-effect waves-light col s12" ng-click="submitted = true">Cadastrar</button>
+					
+		</form>
+	</div>
+	
+	
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('AppController', [function() {
+				var vm = this;
+				vm.submitMyForm = function() {
+					console.log('Form is submitted with following user', vm.user);
+				};
+				
+				vm.submitMyForm = function() {
+					console.log('Form is submitted with following user', vm.user);
+				};
+				
+				
+				
+			}])
+		;
+	</script>
+	
+	
+	
+	
+</body>
+</html>
